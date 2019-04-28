@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "Evolve/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Evolve.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Evolve.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1091,6 +1100,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "[2.2.0, 3.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0": {
@@ -4764,6 +4785,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "RestSkeleton.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "RestSkeleton.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RestSkeleton.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestSkeleton.Business.dll": {}
+        }
+      },
       "RestSkeleton.Model/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -4777,22 +4811,40 @@
           "bin/placeholder/RestSkeleton.Model.dll": {}
         }
       },
-      "RestSkeleton.Service/1.0.0": {
+      "RestSkeleton.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Pomelo.EntityFrameworkCore.MySql": "2.2.0",
           "RestSkeleton.Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/RestSkeleton.Service.dll": {}
+          "bin/placeholder/RestSkeleton.Repository.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RestSkeleton.Service.dll": {}
+          "bin/placeholder/RestSkeleton.Repository.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "Evolve/2.2.0": {
+      "sha512": "5TjEs1jwdrtF6NB2ZTAqy3bh0X1ZuW2Yqi2uglL58GJ+duwwn0g/+iUJOB7Xknib5pnhibW1BWc/r7fUx31DUg==",
+      "type": "package",
+      "path": "evolve/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "evolve.2.2.0.nupkg.sha512",
+        "evolve.nuspec",
+        "lib/net35/Evolve.dll",
+        "lib/net35/Evolve.pdb",
+        "lib/net461/Evolve.dll",
+        "lib/net461/Evolve.pdb",
+        "lib/netstandard2.0/Evolve.dll",
+        "lib/netstandard2.0/Evolve.pdb"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5654,6 +5706,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.xml",
         "microsoft.aspnetcore.mvc.taghelpers.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.mvc.taghelpers.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/3.1.2": {
+      "sha512": "/SzDQOmzhvfBKorhBR4QKmIbyfe7nzjm/tekmbH+631nuBS5JJTeEf+T6SDAZE1TJXP0h2YTRIPj1a1Vv6j/8g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.versioning/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.pdb",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.xml",
+        "microsoft.aspnetcore.mvc.versioning.3.1.2.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.versioning.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0": {
@@ -12972,27 +13039,35 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "RestSkeleton.Business/1.0.0": {
+      "type": "project",
+      "path": "../Services/RestSkeleton.Business.csproj",
+      "msbuildProject": "../Services/RestSkeleton.Business.csproj"
+    },
     "RestSkeleton.Model/1.0.0": {
       "type": "project",
       "path": "../Model/RestSkeleton.Model.csproj",
       "msbuildProject": "../Model/RestSkeleton.Model.csproj"
     },
-    "RestSkeleton.Service/1.0.0": {
+    "RestSkeleton.Repository/1.0.0": {
       "type": "project",
-      "path": "../Services/RestSkeleton.Service.csproj",
-      "msbuildProject": "../Services/RestSkeleton.Service.csproj"
+      "path": "../Repository/RestSkeleton.Repository.csproj",
+      "msbuildProject": "../Repository/RestSkeleton.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Evolve >= 2.2.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Mvc.Versioning >= 3.1.2",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.4.10",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
       "Pomelo.EntityFrameworkCore.MySql >= 2.2.0",
+      "RestSkeleton.Business >= 1.0.0",
       "RestSkeleton.Model >= 1.0.0",
-      "RestSkeleton.Service >= 1.0.0"
+      "RestSkeleton.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13028,8 +13103,11 @@
             "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj": {
               "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj"
             },
-            "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj": {
-              "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj"
+            "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj": {
+              "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj"
+            },
+            "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj": {
+              "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj"
             }
           }
         }
@@ -13043,11 +13121,19 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "Evolve": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Mvc.Versioning": {
+            "target": "Package",
+            "version": "[3.1.2, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",

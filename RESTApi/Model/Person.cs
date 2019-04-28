@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model
+namespace RestSkeleton.Model
 {
     public class Person
     {

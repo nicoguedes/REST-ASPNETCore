@@ -1,4 +1,6 @@
-﻿using System;
+﻿extern alias MySqlConnectorAlias;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,31 +13,59 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MySqlConnectorAlias::MySql.Data.MySqlClient;
+using RESTApi.RepositoryImpl;
 using RESTApi.ServiceImpl;
 using RestSkeleton.Model;
+using RestSkeleton.Repository;
 using Services;
 
 namespace RESTApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger _logger;
+        public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; }
+
+        public Startup(IConfiguration configuration, IHostingEnvironment environment, ILogger<Startup> logger)
         {
+            Environment = environment;
             Configuration = configuration;
+            _logger = logger;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration["MySqlConnection:MySqlConnectionString"];
+            var connectionString = Configuration["MySqlConnection:MySqlConnectionString"];
 
-            services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
+            services.AddDbContext<MySqlContext>(options => options.UseMySql(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddApiVersioning();
+
+            if (Environment.IsDevelopment())
+            {
+                try
+                {
+                    var evolveConnection = new MySqlConnection(connectionString);
+                    var evolve = new Evolve.Evolve(evolveConnection, msg => _logger.LogInformation(msg))
+                    {
+                        Locations = new List<string> { "db/migrations" },
+                        IsEraseDisabled = true
+                    };
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogCritical("Migration has failed.", ex);
+                    throw;
+                }
+            }
 
             // Dependency Injection
-            services.AddScoped<IPersonService, PersonServiceImpl>();
+            services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

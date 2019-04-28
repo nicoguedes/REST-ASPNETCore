@@ -4,17 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Model;
+using RestSkeleton.Model;
 using Services;
 
 namespace RESTApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1")]
     public class PersonsController : ControllerBase
     {
-        private IPersonService _personService;
-        public PersonsController(IPersonService personService)
+        private IPersonBusiness _personService;
+        public PersonsController(IPersonBusiness personService)
         {
             _personService = personService;
         }

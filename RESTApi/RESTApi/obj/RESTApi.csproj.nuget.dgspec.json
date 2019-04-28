@@ -60,6 +60,66 @@
         }
       }
     },
+    "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj",
+        "projectName": "RestSkeleton.Repository",
+        "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj": {
+                "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\RESTApi\\RESTApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -89,8 +149,11 @@
               "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj": {
                 "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Model\\RestSkeleton.Model.csproj"
               },
-              "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj": {
-                "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj"
+              "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj": {
+                "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Repository\\RestSkeleton.Repository.csproj"
+              },
+              "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj": {
+                "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj"
               }
             }
           }
@@ -104,11 +167,19 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Evolve": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[3.1.2, )"
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
@@ -142,12 +213,12 @@
         }
       }
     },
-    "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj": {
+    "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj",
-        "projectName": "RestSkeleton.Service",
-        "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Service.csproj",
+        "projectUniqueName": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj",
+        "projectName": "RestSkeleton.Business",
+        "projectPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\RestSkeleton.Business.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
         "outputPath": "C:\\Dev\\REST-Classes\\REST-ASPNETCore\\RESTApi\\Services\\obj\\",
         "projectStyle": "PackageReference",
