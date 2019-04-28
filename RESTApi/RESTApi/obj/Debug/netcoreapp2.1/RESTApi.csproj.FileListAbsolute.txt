@@ -9,7 +9,7 @@ C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\bin\Debug\netcoreapp2.1\REST
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.csprojAssemblyReference.cache
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.RazorAssemblyInfo.cache
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.RazorAssemblyInfo.cs
-C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.RazorTargetAssemblyInfo.cache
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.dll
 C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\RESTApi.pdb
+C:\Dev\REST-Classes\REST-ASPNETCore\RESTApi\RESTApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
