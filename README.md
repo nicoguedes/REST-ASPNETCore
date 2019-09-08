@@ -1,4 +1,4 @@
-# .NET CORE CRUD REST API Template
+# .NET Core CRUD (REST) Template
 
 Basic application connecting to a MySQL Database.
 A Generic Service was created for CRUD Operations.
